@@ -1,0 +1,5 @@
+@echo off
+git add .
+git commit -m "New"
+git push origin main
+pause
