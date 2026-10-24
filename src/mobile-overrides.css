@@ -1,0 +1,65 @@
+/* Mobile-first correction layer: prevents overflow and improves touch targets. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+body { min-width: 320px; overflow-x: clip; }
+img, svg, video, canvas { max-width: 100%; }
+button, a, input, select, textarea { touch-action: manipulation; }
+:where(button, a, input, select, textarea) { scroll-margin-top: 90px; }
+.container { min-width: 0; }
+.hero-grid > *, .custom-grid > *, .calculator-grid > *, .custom-order-grid > *, .about-grid > *, .faq-grid > *, .footer-main > * { min-width: 0; }
+@media (max-width: 850px) {
+  .nav-wrap { position: relative; }
+  .main-nav { z-index: 100; max-height: calc(100dvh - 75px); overflow-y: auto; }
+  .hero-grid, .custom-grid, .calculator-grid, .custom-order-grid, .about-grid, .faq-grid { min-width: 0; }
+  .hero-visual, .custom-showcase { width: 100%; min-width: 0; }
+  .custom-product-card { min-width: 0; }
+  .product-grid > * { min-width: 0; }
+  .calculator-card, .custom-form { min-width: 0; }
+  .form-two-cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .form-field input, .form-field textarea, .select-wrap select { width: 100%; min-width: 0; }
+}
+@media (max-width: 560px) {
+  .container { width: calc(100% - 32px); }
+  .nav-wrap { min-height: 66px; }
+  .brand { min-width: 0; }
+  .brand-copy strong { white-space: nowrap; }
+  .nav-actions { flex-shrink: 0; }
+  .hero h1 { overflow-wrap: anywhere; }
+  .hero-actions { grid-template-columns: minmax(0, 1fr); }
+  .hero-visual { min-height: 390px; }
+  .visual-stage { min-height: 330px; }
+  .hero-bottle-wrap .bottle-art { height: clamp(245px, 68vw, 300px); max-width: 100%; }
+  .sample-card { max-width: 34%; }
+  .visual-note { max-width: 52%; }
+  .visual-note > span { font-size: clamp(16px, 5vw, 21px); }
+  .hero-bottomline { flex-wrap: wrap; }
+  .product-grid { grid-template-columns: minmax(0, 1fr); }
+  .product-card, .custom-product-card { min-width: 0; }
+  .product-title-row { flex-wrap: wrap; }
+  .product-price { white-space: normal; text-align: left; }
+  .custom-showcase { min-height: 420px; }
+  .showcase-bottle .bottle-art { height: clamp(220px, 63vw, 270px); }
+  .wedding-sample { width: min(145px, 44%); }
+  .calculator-card, .custom-form { padding: 16px; }
+  .calculator-card-head, .form-heading { gap: 12px; }
+  .calculator-card-head h3, .form-heading h3 { font-size: clamp(18px, 5vw, 22px); }
+  .form-two-cols { grid-template-columns: minmax(0, 1fr); }
+  .form-field label { display: block; line-height: 1.5; }
+  .upload-field { min-width: 0; flex-wrap: wrap; }
+  .upload-copy { min-width: 0; flex: 1; }
+  .upload-copy strong { overflow-wrap: anywhere; }
+  .custom-price-summary { gap: 8px; flex-wrap: wrap; }
+  .footer-main { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .footer-main > * { min-width: 0; }
+  .footer-bottom > * { min-width: 0; }
+  .floating-whatsapp { right: 14px; bottom: max(14px, env(safe-area-inset-bottom)); z-index: 120; }
+}
+@media (max-width: 360px) {
+  .container { width: calc(100% - 24px); }
+  .brand-mark { width: 32px; height: 32px; }
+  .brand-copy strong { font-size: 13px; }
+  .brand-copy small { font-size: 6px; }
+  .theme-toggle, .menu-toggle { width: 33px; height: 33px; }
+  .nav-wrap { gap: 5px; }
+  .sample-card { right: 4px; padding: 9px; }
+  .calculator-card, .custom-form { padding: 13px; }
+}
